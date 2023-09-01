@@ -1,16 +1,27 @@
-# This is a sample Python script.
+def calcular_imc(peso, altura):
+    imc = peso /(altura ** 2)
+    return imc
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def interpretar_imc(imc):
+    if imc < 18.5:
+        return "Abaixo do peso"
+    elif imc < 24.9:
+        return "Peso Normal"
+    elif imc < 29.9:
+        return "Sobrepeso"
+    else:
+        return "Obeso"
 
+def main():
+    print('Calculadora IMC')
+    peso = float(input('Digite o seu peso: '))
+    altura = float(input('Digite a sua altura: '))
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    imc =calcular_imc(peso, altura)
+    status = interpretar_imc(imc)
 
+    print(f'Seu IMC é {imc:.2f}')
+    print(f'Status: {status}')
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    main()
